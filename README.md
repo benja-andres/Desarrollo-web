@@ -1,4 +1,5 @@
-Desarrollo Web
-Integrantes:
--Benjamín López
--Gabriel González
+# Desarrollo Web
+
+## Integrantes
+* Benjamín López
+* Gabriel González
