@@ -10,7 +10,7 @@ Proyecto para el ramo de Desarrollo Web. Es una página web de una tienda online
 
 ---
 
-## 📅 Bitácora de Semanas
+## 📅 Avances por Semanas
 
 * **Semana 01:** Creación del repositorio en GitHub y estructura inicial de los archivos PHP.
 * **Semana 02:** Maquetación del sitio con Bootstrap (barra de navegación, diseño responsivo y páginas como index, empresa, productos, galería y contacto).
