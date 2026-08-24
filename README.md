@@ -6,7 +6,8 @@ Proyecto para el ramo de Desarrollo Web. Es una página web de una tienda online
 
 ## 👥 Integrantes
 
-* Benjamín Andrés López
+* Gabriel Gonzalez
+* Benjamín López
 
 ---
 
