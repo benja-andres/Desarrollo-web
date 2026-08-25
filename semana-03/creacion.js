@@ -45,5 +45,5 @@ function generarMonkeysDinamicos() {
     });
 }
 
-// Ejecutar la función al cargar la página
+// Ejecutar la función al cargar la pagina
 window.addEventListener('DOMContentLoaded', generarMonkeysDinamicos);
