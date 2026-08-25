@@ -39,7 +39,8 @@ function generarMonkeysDinamicos() {
             </div>
         `;
 
-        columna.appendChild();
+        // D. Agregar la tarjeta dentro de la columna, y la columna dentro del contenedor
+        columna.appendChild(tarjeta);
         contenedorMonkeys.appendChild(columna);
     });
 }
