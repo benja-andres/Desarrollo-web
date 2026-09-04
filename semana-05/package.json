@@ -1,0 +1,29 @@
+{
+  "name": "natural-power-api",
+  "version": "1.0.0",
+  "description": "API GraphQL para el e-commerce Natural Power (jugos y smoothies) - modulo de Productos y Combos",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "start:prod": "node server.js"
+  },
+  "keywords": [
+    "graphql",
+    "apollo-server",
+    "express",
+    "mongoose"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "3.13.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "graphql": "15.10.1",
+    "mongoose": "8.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
