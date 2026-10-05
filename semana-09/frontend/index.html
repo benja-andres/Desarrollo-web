@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Semana 09 - Sesiones y permisos</title>
+  <style>
+    body { max-width: 720px; margin: 40px auto; padding: 0 16px; font: 16px Arial, sans-serif; color: #222; }
+    section { margin: 20px 0; padding: 16px; border: 1px solid #ddd; border-radius: 8px; }
+    input, button { margin: 4px; padding: 9px; }
+    pre { padding: 12px; background: #f4f4f4; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h1>Autenticación y autorización</h1>
+  <p>Prueba de sesión, consulta de productos y permisos por rol.</p>
+  <section>
+    <h2>Iniciar sesión</h2>
+    <form id="login-form">
+      <input id="username" placeholder="Usuario" value="ana" required>
+      <input id="password" placeholder="Contraseña" type="password" value="1234" required>
+      <button>Ingresar</button>
+    </form>
+    <button id="me">Consultar usuario actual</button>
+    <button id="logout">Cerrar sesión</button>
+  </section>
+  <section>
+    <h2>Productos</h2>
+    <button id="products">Consultar productos</button>
+    <button id="delete">Eliminar producto 1 (admin)</button>
+  </section>
+  <pre id="output">Inicia sesión para comenzar.</pre>
+  <script>
+    const output = document.querySelector("#output");
+    async function call(path, options = {}) {
+      const response = await fetch(path, { credentials: "include", ...options });
+      const data = await response.json();
+      output.textContent = `${response.status} ${response.statusText}\n${JSON.stringify(data, null, 2)}`;
+    }
+    document.querySelector("#login-form").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      await call("/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          username: document.querySelector("#username").value,
+          password: document.querySelector("#password").value
+        })
+      });
+    });
+    document.querySelector("#me").onclick = () => call("/auth/me");
+    document.querySelector("#logout").onclick = () => call("/auth/logout", { method: "POST" });
+    document.querySelector("#products").onclick = () => call("/api/products");
+    document.querySelector("#delete").onclick = () => call("/api/products/1", { method: "DELETE" });
+  </script>
+</body>
+</html>
